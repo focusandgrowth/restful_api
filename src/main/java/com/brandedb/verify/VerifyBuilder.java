@@ -1,7 +1,6 @@
 package com.brandedb.verify;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
 import com.brandedb.general.ObjectUtil;
@@ -12,12 +11,16 @@ public class VerifyBuilder {
 	Collection<Number> numbers = new ArrayList<Number>();
 
 	public VerifyBuilder objects(Object... os) {
-		objects = Arrays.asList(os);
+		for(Object o:os) {
+			objects.add(o);
+		}
 		return this;
 	}
 
 	public VerifyBuilder numbers(Number... ns) {
-		numbers = Arrays.asList(ns);
+		for(Number n:ns){
+			numbers.add(n);
+		}
 		return this;
 	}
 
